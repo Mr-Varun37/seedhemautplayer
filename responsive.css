@@ -1,0 +1,101 @@
+/* ===== Tablets (Portrait) and Small Laptops (768px - 991px) ===== */
+@media (max-width: 991px) {
+    .music-container {
+        max-width: 450px;
+        padding: 35px;
+    }
+    #songImage {
+        width: 170px;
+        height: 170px;
+    }
+    #songTitle {
+        font-size: 1.3rem;
+    }
+    button img {
+        width: 28px;
+        height: 28px;
+    }
+    .progress-container span {
+        font-size: 1rem;
+    }
+    .progress-bar {
+        height: 6px;
+    }
+}
+
+/* ===== Large Phones & Small Tablets (480px - 767px) ===== */
+@media (max-width: 767px) {
+    .music-container {
+        max-width: 380px;
+        padding: 40px;
+    }
+    #songImage {
+        width: 180px;
+        height: 180px;
+    }
+    #songTitle {
+        font-size: 1.4rem;
+    }
+    button img {
+        width: 30px;
+        height: 30px;
+    }
+    .progress-container {
+        padding: 0 5px;
+    }
+    .progress-bar {
+        height: 7px;
+    }
+}
+
+/* ===== Small Phones (Below 480px) ===== */
+@media (max-width: 479px) {
+    .music-container {
+        max-width: 90%;
+        padding: 35px;
+        border-radius: 15px;
+    }
+    #songImage {
+        width: 160px;
+        height: 160px;
+    }
+    #songTitle {
+        font-size: 1.3rem;
+    }
+    .progress-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        margin: 0;
+    }
+    button img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ===== Ultra-Small Phones (Below 360px) ===== */
+@media (max-width: 360px) {
+    .music-container {
+        max-width: 95%;
+        padding: 30px;
+    }
+    #songImage {
+        width: 140px;
+        height: 140px;
+    }
+    #songTitle {
+        font-size: 1.2rem;
+    }
+    button img {
+        width: 28px;
+        height: 28px;
+    }
+    .progress-bar {
+        height: 6px;
+    }
+}
