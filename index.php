@@ -17,6 +17,7 @@ foreach ($songs as $song) {
         }
     }
 
+
     $songData[] = [
         "path" => $song,
         "image" => $imagePath,
@@ -44,7 +45,7 @@ $songDataJson = json_encode($songData);
     </div>
     <div class="music-container">
         <img id="songImage" src="default.jpg" alt="Song Image" crossOrigin="Anonymous">
-        <h2 id="songTitle">Loading...</h2>
+        <h2 id="songTitle">Loading....</h2>
         <audio id="audioPlayer"></audio>
         <div class="progress-container">
             <span id="currentTime">0:00</span>
