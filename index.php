@@ -1,31 +1,3 @@
-<?php
-$songs = glob("songs/*.mp3");
-$songData = [];
-
-foreach ($songs as $song) {
-    $songName = pathinfo($song, PATHINFO_FILENAME);
-    $formattedSongName = str_replace("_", " ", $songName);
-
-    $imageFormats = ["jpg", "jpeg", "webp"];
-    $imagePath = "default.jpg";
-
-    foreach ($imageFormats as $format) {
-        $possibleImage = "songs/{$songName}.{$format}";
-        if (file_exists($possibleImage)) {
-            $imagePath = $possibleImage;
-            break;
-        }
-    }
-
-    $songData[] = [
-        "path" => $song,
-        "image" => $imagePath,
-        "name" => $formattedSongName
-    ];
-}
-
-$songDataJson = json_encode($songData);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,9 +37,6 @@ $songDataJson = json_encode($songData);
             </button>
         </div>
     </div>
-    <script>
-        let songData = <?php echo $songDataJson; ?>;
-    </script>
     <script src="script.js"></script>
 </body>
 

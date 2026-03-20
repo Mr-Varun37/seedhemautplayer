@@ -9,10 +9,33 @@ let durationEl = document.getElementById("duration");
 
 let colorThief = new ColorThief();
 let currentSongIndex = 0;
-let shuffledSongs = shuffleArray(songData); // Shuffle at the start
+let shuffledSongs = [];
+let songData = [];
 
-// Remove loader after page load
-window.addEventListener("load", () => document.getElementById("loader").classList.add("hidden"));
+// Fetch songs from JSON file
+fetch('songs.json')
+    .then(response => response.json())
+    .then(data => {
+        songData = data;
+        shuffledSongs = shuffleArray(songData);
+        loadSong(currentSongIndex);
+        
+        // Remove loader after songs are loaded
+        document.getElementById("loader").classList.add("hidden");
+        
+        // Try autoplay
+        let playPromise = audioPlayer.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                document.addEventListener("click", enableAudioPlayback, { once: true });
+                document.addEventListener("touchstart", enableAudioPlayback, { once: true });
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error loading songs:', error);
+        document.getElementById("loader").classList.add("hidden");
+    });
 
 // Load and Play a Song
 function loadSong(index) {
@@ -30,24 +53,11 @@ function loadSong(index) {
     updatePlayButton(false);
 }
 
-// Try autoplay, fallback to user interaction
-document.addEventListener("DOMContentLoaded", () => {
-    loadSong(currentSongIndex);
-
-    let playPromise = audioPlayer.play();
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            document.addEventListener("click", enableAudioPlayback, { once: true });
-            document.addEventListener("touchstart", enableAudioPlayback, { once: true });
-        });
-    }
-});
-
 function enableAudioPlayback() {
     audioPlayer.play().then(() => updatePlayButton(false)).catch(console.log);
 }
 
-// Toggle Play/Pause
+// Rest of your functions remain the same...
 function togglePlay() {
     if (audioPlayer.paused) {
         audioPlayer.play();
@@ -58,12 +68,10 @@ function togglePlay() {
     }
 }
 
-// Update Play/Pause Button
 function updatePlayButton(isPaused) {
     playPauseBtn.innerHTML = `<img src="icons/${isPaused ? "play" : "pause"}.svg" alt="${isPaused ? "Play" : "Pause"}">`;
 }
 
-// Next & Previous Song
 function nextSong() {
     currentSongIndex = (currentSongIndex + 1) % shuffledSongs.length;
     loadSong(currentSongIndex);
@@ -78,7 +86,6 @@ function prevSong() {
     updatePlayButton(false);
 }
 
-// Update Progress Bar
 audioPlayer.addEventListener("timeupdate", () => {
     if (audioPlayer.duration) {
         const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
@@ -88,21 +95,18 @@ audioPlayer.addEventListener("timeupdate", () => {
     }
 });
 
-// Seek Functionality
 progressContainer.addEventListener("click", (event) => {
     const width = progressContainer.clientWidth;
     const clickX = event.offsetX;
     audioPlayer.currentTime = (clickX / width) * audioPlayer.duration;
 });
 
-// Format Time in MM:SS
 function formatTime(time) {
     let minutes = Math.floor(time / 60);
     let seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-// Shuffle Array (Fisher-Yates)
 function shuffleArray(array) {
     let shuffled = array.slice();
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -112,7 +116,6 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-// Keyboard Shortcuts
 document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
         event.preventDefault();
