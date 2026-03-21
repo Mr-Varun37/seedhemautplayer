@@ -1,212 +1,212 @@
-[
+﻿[
     {
-        "path": "songs\/101.mp3",
-        "image": "songs\/101.jpeg",
-        "name": "101"
+        "path":  "songs/101.mp3",
+        "image":  "songs/101.jpeg",
+        "name":  "101"
     },
     {
-        "path": "songs\/11K.mp3",
-        "image": "songs\/11K.jpeg",
-        "name": "11K"
+        "path":  "songs/11k.mp3",
+        "image":  "songs/11k.jpeg",
+        "name":  "11K"
     },
     {
-        "path": "songs\/Akatsuki.mp3",
-        "image": "songs\/Akatsuki.jpeg",
-        "name": "Akatsuki"
+        "path":  "songs/akatsuki.mp3",
+        "image":  "songs/akatsuki.jpeg",
+        "name":  "Akatsuki"
     },
     {
-        "path": "songs\/Anaadi.mp3",
-        "image": "songs\/Anaadi.jpeg",
-        "name": "Anaadi"
+        "path":  "songs/anaadi.mp3",
+        "image":  "songs/anaadi.jpeg",
+        "name":  "Anaadi"
     },
     {
-        "path": "songs\/Asal G.mp3",
-        "image": "songs\/Asal G.jpeg",
-        "name": "Asal G"
+        "path":  "songs/asal g.mp3",
+        "image":  "songs/asal g.jpeg",
+        "name":  "Asal G"
     },
     {
-        "path": "songs\/Bajenge.mp3",
-        "image": "songs\/Bajenge.jpeg",
-        "name": "Bajenge"
+        "path":  "songs/bajenge.mp3",
+        "image":  "songs/bajenge.jpeg",
+        "name":  "Bajenge"
     },
     {
-        "path": "songs\/Batti.mp3",
-        "image": "songs\/Batti.jpeg",
-        "name": "Batti"
+        "path":  "songs/batti.mp3",
+        "image":  "songs/batti.jpeg",
+        "name":  "Batti"
     },
     {
-        "path": "songs\/Bhussi.mp3",
-        "image": "songs\/Bhussi.webp",
-        "name": "Bhussi"
+        "path":  "songs/bhussi.mp3",
+        "image":  "songs/bhussi.webp",
+        "name":  "Bhussi"
     },
     {
-        "path": "songs\/Bure Din.mp3",
-        "image": "songs\/Bure Din.jpeg",
-        "name": "Bure Din"
+        "path":  "songs/bure din.mp3",
+        "image":  "songs/bure din.jpeg",
+        "name":  "Bure Din"
     },
     {
-        "path": "songs\/Caramel Tax.mp3",
-        "image": "songs\/Caramel Tax.jpg",
-        "name": "Caramel Tax"
+        "path":  "songs/caramel tax.mp3",
+        "image":  "songs/caramel tax.jpg",
+        "name":  "Caramel Tax"
     },
     {
-        "path": "songs\/Chalo Chalein.mp3",
-        "image": "songs\/Chalo Chalein.jpeg",
-        "name": "Chalo Chalein"
+        "path":  "songs/chalo chalein.mp3",
+        "image":  "songs/chalo chalein.jpeg",
+        "name":  "Chalo Chalein"
     },
     {
-        "path": "songs\/Do Guna.mp3",
-        "image": "songs\/Do Guna.jpeg",
-        "name": "Do Guna"
+        "path":  "songs/do guna.mp3",
+        "image":  "songs/do guna.jpeg",
+        "name":  "Do Guna"
     },
     {
-        "path": "songs\/Gandi Aulaad.mp3",
-        "image": "songs\/Gandi Aulaad.jpeg",
-        "name": "Gandi Aulaad"
+        "path":  "songs/gandi aulaad.mp3",
+        "image":  "songs/gandi aulaad.jpeg",
+        "name":  "Gandi Aulaad"
     },
     {
-        "path": "songs\/Hola Amigo.mp3",
-        "image": "songs\/Hola Amigo.jpeg",
-        "name": "Hola Amigo"
+        "path":  "songs/hola amigo.mp3",
+        "image":  "songs/hola amigo.jpeg",
+        "name":  "Hola Amigo"
     },
     {
-        "path": "songs\/Holi Re Rasiya.mp3",
-        "image": "songs\/Holi Re Rasiya.webp",
-        "name": "Holi Re Rasiya"
+        "path":  "songs/holi re rasiya.mp3",
+        "image":  "songs/holi re rasiya.webp",
+        "name":  "Holi Re Rasiya"
     },
     {
-        "path": "songs\/Hoshiyaar.mp3",
-        "image": "songs\/Hoshiyaar.jpeg",
-        "name": "Hoshiyaar"
+        "path":  "songs/hoshiyaar.mp3",
+        "image":  "songs/hoshiyaar.jpeg",
+        "name":  "Hoshiyaar"
     },
     {
-        "path": "songs\/Jama Kar.mp3",
-        "image": "songs\/Jama Kar.webp",
-        "name": "Jama Kar"
+        "path":  "songs/jama kar.mp3",
+        "image":  "songs/jama kar.webp",
+        "name":  "Jama Kar"
     },
     {
-        "path": "songs\/Joint In The Booth.mp3",
-        "image": "songs\/Joint In The Booth.jpeg",
-        "name": "Joint In The Booth"
+        "path":  "songs/joint in the booth.mp3",
+        "image":  "songs/joint in the booth.jpeg",
+        "name":  "Joint In The Booth"
     },
     {
-        "path": "songs\/Kaanch Ke Ghar.mp3",
-        "image": "songs\/Kaanch Ke Ghar.jpeg",
-        "name": "Kaanch Ke Ghar"
+        "path":  "songs/kaanch ke ghar.mp3",
+        "image":  "songs/kaanch ke ghar.jpeg",
+        "name":  "Kaanch Ke Ghar"
     },
     {
-        "path": "songs\/Khatta Flow.mp3",
-        "image": "songs\/Khatta Flow.jpeg",
-        "name": "Khatta Flow"
+        "path":  "songs/khatta flow.mp3",
+        "image":  "songs/khatta flow.jpeg",
+        "name":  "Khatta Flow"
     },
     {
-        "path": "songs\/Khoj.mp3",
-        "image": "songs\/Khoj.jpeg",
-        "name": "Khoj"
+        "path":  "songs/khoj.mp3",
+        "image":  "songs/khoj.jpeg",
+        "name":  "Khoj"
     },
     {
-        "path": "songs\/Kodak.mp3",
-        "image": "songs\/Kodak.webp",
-        "name": "Kodak"
+        "path":  "songs/kodak.mp3",
+        "image":  "songs/kodak.webp",
+        "name":  "Kodak"
     },
     {
-        "path": "songs\/Kyu.mp3",
-        "image": "songs\/Kyu.jpeg",
-        "name": "Kyu"
+        "path":  "songs/kyu.mp3",
+        "image":  "songs/kyu.jpeg",
+        "name":  "Kyu"
     },
     {
-        "path": "songs\/MMM.mp3",
-        "image": "songs\/MMM.jpeg",
-        "name": "MMM"
+        "path":  "songs/mmm.mp3",
+        "image":  "songs/mmm.jpeg",
+        "name":  "MMM"
     },
     {
-        "path": "songs\/Maina.mp3",
-        "image": "songs\/Maina.jpeg",
-        "name": "Maina"
+        "path":  "songs/maina.mp3",
+        "image":  "songs/maina.jpeg",
+        "name":  "Maina"
     },
     {
-        "path": "songs\/Naamcheen.mp3",
-        "image": "songs\/Naamcheen.jpeg",
-        "name": "Naamcheen"
+        "path":  "songs/naamcheen.mp3",
+        "image":  "songs/naamcheen.jpeg",
+        "name":  "Naamcheen"
     },
     {
-        "path": "songs\/Nadaan.mp3",
-        "image": "songs\/Nadaan.jpeg",
-        "name": "Nadaan"
+        "path":  "songs/nadaan.mp3",
+        "image":  "songs/nadaan.jpeg",
+        "name":  "Nadaan"
     },
     {
-        "path": "songs\/Nafrat.mp3",
-        "image": "songs\/Nafrat.jpeg",
-        "name": "Nafrat"
+        "path":  "songs/nafrat.mp3",
+        "image":  "songs/nafrat.jpeg",
+        "name":  "Nafrat"
     },
     {
-        "path": "songs\/Nalla Freestyle.mp3",
-        "image": "songs\/Nalla Freestyle.jpeg",
-        "name": "Nalla Freestyle"
+        "path":  "songs/nalla freestyle.mp3",
+        "image":  "songs/nalla freestyle.jpeg",
+        "name":  "Nalla Freestyle"
     },
     {
-        "path": "songs\/Namastute.mp3",
-        "image": "songs\/Namastute.jpeg",
-        "name": "Namastute"
+        "path":  "songs/namastute.mp3",
+        "image":  "songs/namastute.jpeg",
+        "name":  "Namastute"
     },
     {
-        "path": "songs\/Nanchaku.mp3",
-        "image": "songs\/Nanchaku.jpeg",
-        "name": "Nanchaku"
+        "path":  "songs/nanchaku.mp3",
+        "image":  "songs/nanchaku.jpeg",
+        "name":  "Nanchaku"
     },
     {
-        "path": "songs\/Nawazuddin.mp3",
-        "image": "songs\/Nawazuddin.jpeg",
-        "name": "Nawazuddin"
+        "path":  "songs/nawazuddin.mp3",
+        "image":  "songs/nawazuddin.jpeg",
+        "name":  "Nawazuddin"
     },
     {
-        "path": "songs\/Nayaab.mp3",
-        "image": "songs\/Nayaab.jpeg",
-        "name": "Nayaab"
+        "path":  "songs/nayaab.mp3",
+        "image":  "songs/nayaab.jpeg",
+        "name":  "Nayaab"
     },
     {
-        "path": "songs\/Nazarbhattu Freestyle.mp3",
-        "image": "songs\/Nazarbhattu Freestyle.jpeg",
-        "name": "Nazarbhattu Freestyle"
+        "path":  "songs/nazarbhattu freestyle.mp3",
+        "image":  "songs/nazarbhattu freestyle.jpeg",
+        "name":  "Nazarbhattu Freestyle"
     },
     {
-        "path": "songs\/RED.mp3",
-        "image": "songs\/RED.jpg",
-        "name": "RED"
+        "path":  "songs/red.mp3",
+        "image":  "songs/red.jpg",
+        "name":  "RED"
     },
     {
-        "path": "songs\/Raat Ki Rani.mp3",
-        "image": "songs\/Raat Ki Rani.jpg",
-        "name": "Raat Ki Rani"
+        "path":  "songs/raat ki rani.mp3",
+        "image":  "songs/raat ki rani.jpg",
+        "name":  "Raat Ki Rani"
     },
     {
-        "path": "songs\/Soyi Nahi.mp3",
-        "image": "songs\/Soyi Nahi.jpg",
-        "name": "Soyi Nahi"
+        "path":  "songs/soyi nahi.mp3",
+        "image":  "songs/soyi nahi.jpg",
+        "name":  "Soyi Nahi"
     },
     {
-        "path": "songs\/Swah.mp3",
-        "image": "songs\/Swah.jpeg",
-        "name": "Swah"
+        "path":  "songs/swah.mp3",
+        "image":  "songs/swah.jpeg",
+        "name":  "Swah"
     },
     {
-        "path": "songs\/TT Shutdown - Seedhe Maut.mp3",
-        "image": "songs\/TT Shutdown - Seedhe Maut.jpeg",
-        "name": "TT Shutdown - Seedhe Maut"
+        "path":  "songs/tt shutdown - seedhe maut.mp3",
+        "image":  "songs/tt shutdown - seedhe maut.jpeg",
+        "name":  "TT Shutdown - Seedhe Maut"
     },
     {
-        "path": "songs\/Teen Dost.mp3",
-        "image": "songs\/Teen Dost.jpeg",
-        "name": "Teen Dost"
+        "path":  "songs/teen dost.mp3",
+        "image":  "songs/teen dost.jpeg",
+        "name":  "Teen Dost"
     },
     {
-        "path": "songs\/Toh Kya.mp3",
-        "image": "songs\/Toh Kya.jpeg",
-        "name": "Toh Kya"
+        "path":  "songs/toh kya.mp3",
+        "image":  "songs/toh kya.jpeg",
+        "name":  "Toh Kya"
     },
     {
-        "path": "songs\/Tour Shit.mp3",
-        "image": "songs\/Tour Shit.jpeg",
-        "name": "Tour Shit"
+        "path":  "songs/tour shit.mp3",
+        "image":  "songs/tour shit.jpeg",
+        "name":  "Tour Shit"
     }
 ]
