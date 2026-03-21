@@ -1,43 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dynamic">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0d14">
     <title>Seedhe Maut Music Player</title>
+    <style>
+        html,
+        body {
+            background: #0a0d14;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js"></script>
 </head>
 
 <body>
-    <div id="loader">
-        <div class="spinner"></div>
+    <canvas id="particleCanvas" class="background-canvas" aria-hidden="true"></canvas>
+
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading the discography...</p>
+        </div>
     </div>
-    <div class="music-container">
-        <img id="songImage" src="default.jpg" alt="Song Image" crossOrigin="Anonymous">
-        <h2 id="songTitle">Loading...</h2>
-        <audio id="audioPlayer"></audio>
-        <div class="progress-container">
-            <span id="currentTime">0:00</span>
-            <div class="progress-bar">
-                <div class="progress"></div>
+
+    <main class="app-shell" id="app">
+        <header class="topbar">
+            <div class="brand-block">
+                <p class="eyebrow">Seedhe Maut Fan System</p>
+                <h1>Premium Player</h1>
             </div>
-            <span id="duration">0:00</span>
+
+            <div class="topbar-tools">
+                <label class="search-wrap">
+                    <span class="sr-only">Search songs or albums</span>
+                    <input id="searchInput" type="search" placeholder="Search songs or albums">
+                </label>
+
+                <label class="select-wrap">
+                    <span>Sort</span>
+                    <select id="sortSelect">
+                        <option value="name">Name</option>
+                        <option value="latest">Latest Added</option>
+                        <option value="most-played">Most Played</option>
+                    </select>
+                </label>
+
+                <label class="select-wrap">
+                    <span>Theme</span>
+                    <select id="themeSelect">
+                        <option value="dynamic">Dynamic</option>
+                        <option value="dark">Dark</option>
+                        <option value="glass">Glass</option>
+                        <option value="neon">Neon</option>
+                        <option value="nayaab">Nayaab</option>
+                        <option value="bayaan">Bayaan</option>
+                        <option value="lunchbreak">Lunch Break</option>
+                    </select>
+                </label>
+
+                <div class="toolbar-actions">
+                    <button class="ui-btn" id="viewToggleBtn" type="button">Grid View</button>
+                    <button class="ui-btn" id="favoritesFilterBtn" type="button">Favorites Only</button>
+                    <button class="ui-btn" id="shareCurrentBtn" type="button">Share</button>
+                    <button class="ui-btn" id="helpBtn" type="button">Shortcuts</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <section class="player-column">
+                <article class="player-card" id="playerStage">
+                    <div class="player-art-shell">
+                        <canvas id="visualizerCanvas" class="visualizer-canvas" aria-hidden="true"></canvas>
+                        <img id="songImage" src="songs/default.jpg" alt="Song cover" crossorigin="anonymous">
+                    </div>
+
+                    <div class="player-meta">
+                        <div>
+                            <p class="eyebrow" id="albumEyebrow">Album</p>
+                            <h2 id="songTitle">Loading...</h2>
+                            <p id="songStatus">Building your queue...</p>
+                        </div>
+                        <div class="meta-tags" id="songMetaTags"></div>
+                    </div>
+
+                    <div class="progress-wrap">
+                        <span id="currentTime">0:00</span>
+                        <div class="progress-bar" id="progressBar" role="slider" aria-label="Song progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div class="progress"></div>
+                            <div id="progressPreview" class="progress-preview">0:00</div>
+                        </div>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                    <div class="transport-row">
+                        <div class="transport-controls">
+                            <button class="icon-btn" id="shuffleBtn" type="button" aria-label="Shuffle off" title="Shuffle off">
+                                <img src="icons/shuffle.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="icon-btn" id="prevBtn" type="button" aria-label="Previous song">
+                                <img src="icons/prev.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="play-btn" id="playPauseBtn" type="button" aria-label="Play or pause">
+                                <img src="icons/play.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="icon-btn" id="nextBtn" type="button" aria-label="Next song">
+                                <img src="icons/next.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="icon-btn" id="repeatBtn" type="button" aria-label="Repeat off" title="Repeat off">
+                                <img src="icons/repeat.svg" alt="" aria-hidden="true">
+                            </button>
+                        </div>
+
+                        <div class="transport-utility">
+                            <button class="icon-btn" id="favoriteBtn" type="button" aria-label="Favorite" title="Favorite">
+                                <img src="icons/favorite.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="icon-btn" id="surpriseBtn" type="button" aria-label="Random song" title="Random song">
+                                <img src="icons/random.svg" alt="" aria-hidden="true">
+                            </button>
+                            <button class="ui-btn" id="visualizerToggleBtn" type="button">Visualizer On</button>
+                            <button class="ui-btn" id="fullscreenBtn" type="button">Fullscreen</button>
+                        </div>
+                    </div>
+
+                    <div class="player-tools">
+                        <button class="pill-btn" id="rewindBtn" type="button">-10s</button>
+                        <button class="pill-btn" id="forwardBtn" type="button">+10s</button>
+
+                        <label class="volume-wrap">
+                            <button class="pill-btn" id="muteBtn" type="button">Volume</button>
+                            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="Volume">
+                        </label>
+
+                        <label class="select-wrap compact">
+                            <span>Speed</span>
+                            <select id="speedSelect">
+                                <option value="0.5">0.5x</option>
+                                <option value="0.75">0.75x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="1.25">1.25x</option>
+                                <option value="1.5">1.5x</option>
+                                <option value="2">2x</option>
+                            </select>
+                        </label>
+
+                        <label class="select-wrap compact">
+                            <span>Sleep</span>
+                            <select id="sleepTimerSelect">
+                                <option value="off" selected>Off</option>
+                                <option value="15">15 min</option>
+                                <option value="30">30 min</option>
+                                <option value="45">45 min</option>
+                                <option value="60">60 min</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="status-grid" id="statusGrid"></div>
+
+                    <section class="quick-panels">
+                        <div class="panel-card">
+                            <div class="section-head">
+                                <h3>Recommendations</h3>
+                            </div>
+                            <div id="recommendationsList" class="chip-cloud"></div>
+                        </div>
+                        <div class="panel-card">
+                            <div class="section-head">
+                                <h3>Mood Playlists</h3>
+                            </div>
+                            <div id="moodPlaylists" class="chip-cloud"></div>
+                        </div>
+                    </section>
+                </article>
+            </section>
+
+            <section class="content-column">
+                <nav class="tab-bar" id="tabBar">
+                    <button class="tab-btn active" data-tab="library" type="button">Library</button>
+                    <button class="tab-btn" data-tab="queue" type="button">Queue</button>
+                    <button class="tab-btn" data-tab="playlists" type="button">Playlists</button>
+                    <button class="tab-btn" data-tab="fan" type="button">Fan Mode</button>
+                    <button class="tab-btn" data-tab="stats" type="button">Stats</button>
+                </nav>
+
+                <section class="panel-view active" id="panel-library"></section>
+                <section class="panel-view" id="panel-queue"></section>
+                <section class="panel-view" id="panel-playlists"></section>
+                <section class="panel-view" id="panel-fan"></section>
+                <section class="panel-view" id="panel-stats"></section>
+            </section>
+        </section>
+    </main>
+
+    <div class="mini-player" id="miniPlayer">
+        <div class="mini-player__meta">
+            <strong id="miniTitle">Loading...</strong>
+            <span id="miniAlbum">Seedhe Maut</span>
         </div>
-        <div class="controls">
-            <button onclick="prevSong()">
-                <img src="icons/prev.svg" alt="Prev">
+        <div class="mini-player__controls">
+            <button class="icon-btn" id="miniPlayPauseBtn" type="button" aria-label="Play or pause">
+                <img src="icons/play.svg" alt="" aria-hidden="true">
             </button>
-            <button onclick="togglePlay()" id="playPauseBtn">
-                <img src="icons/play.svg" alt="Play">
+            <button class="icon-btn" id="miniNextBtn" type="button" aria-label="Next song">
+                <img src="icons/next.svg" alt="" aria-hidden="true">
             </button>
-            <button onclick="nextSong()">
-                <img src="icons/next.svg" alt="Next">
-            </button>
+        </div>
+        <div class="mini-player__progress">
+            <div id="miniProgressBar" class="mini-player__progress-fill"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <dialog id="helpModal" class="dialog-card">
+        <form method="dialog">
+            <div class="dialog-head">
+                <h3>Keyboard Shortcuts</h3>
+                <button class="ui-btn" type="submit">Close</button>
+            </div>
+            <div class="shortcut-grid">
+                <span><strong>Space</strong> Play / Pause</span>
+                <span><strong>Left / Right</strong> Previous / Next</span>
+                <span><strong>F</strong> Favorite</span>
+                <span><strong>S</strong> Shuffle</span>
+                <span><strong>R</strong> Repeat</span>
+                <span><strong>Q</strong> Queue tab</span>
+                <span><strong>L</strong> Library tab</span>
+                <span><strong>?</strong> Open help</span>
+            </div>
+        </form>
+    </dialog>
+
+    <input id="importInput" type="file" accept="application/json" hidden>
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

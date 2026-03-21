@@ -1,101 +1,113 @@
-/* ===== Tablets (Portrait) and Small Laptops (768px - 991px) ===== */
-@media (max-width: 991px) {
-    .music-container {
-        max-width: 450px;
-        padding: 35px;
+@media (max-width: 1200px) {
+    .dashboard {
+        grid-template-columns: 1fr;
     }
-    #songImage {
-        width: 170px;
-        height: 170px;
+
+    .player-card {
+        position: static;
     }
-    #songTitle {
-        font-size: 1.3rem;
-    }
-    button img {
-        width: 28px;
-        height: 28px;
-    }
-    .progress-container span {
-        font-size: 1rem;
-    }
-    .progress-bar {
-        height: 6px;
+
+    .playlist-layout,
+    .fan-layout {
+        grid-template-columns: 1fr;
     }
 }
 
-/* ===== Large Phones & Small Tablets (480px - 767px) ===== */
-@media (max-width: 767px) {
-    .music-container {
-        max-width: 380px;
-        padding: 40px;
+@media (max-width: 900px) {
+    .topbar {
+        grid-template-columns: 1fr;
     }
-    #songImage {
-        width: 180px;
-        height: 180px;
+
+    .topbar-tools {
+        grid-template-columns: 1fr 1fr;
     }
-    #songTitle {
-        font-size: 1.4rem;
+
+    .toolbar-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
     }
-    button img {
-        width: 30px;
-        height: 30px;
-    }
-    .progress-container {
-        padding: 0 5px;
-    }
-    .progress-bar {
-        height: 7px;
+
+    .status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* ===== Small Phones (Below 480px) ===== */
-@media (max-width: 479px) {
-    .music-container {
-        max-width: 90%;
-        padding: 35px;
-        border-radius: 15px;
+@media (max-width: 720px) {
+    .app-shell {
+        width: min(100% - 18px, 100%);
+        margin-bottom: 130px;
     }
-    #songImage {
-        width: 160px;
-        height: 160px;
+
+    .topbar,
+    .player-card,
+    .panel-view {
+        border-radius: 24px;
+        padding: 16px;
     }
-    #songTitle {
-        font-size: 1.3rem;
+
+    .topbar-tools {
+        grid-template-columns: 1fr;
     }
-    .progress-container {
+
+    .progress-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .player-meta,
+    .transport-row,
+    .section-head,
+    .dialog-head {
         flex-direction: column;
-        gap: 10px;
-        padding: 0;
+        align-items: stretch;
     }
-    .progress-bar {
+
+    .transport-controls,
+    .transport-utility,
+    .player-tools {
+        justify-content: center;
+    }
+
+    .transport-utility .ui-btn,
+    .player-tools .pill-btn,
+    .player-tools .select-wrap {
         width: 100%;
-        height: 8px;
-        margin: 0;
     }
-    button img {
-        width: 32px;
-        height: 32px;
+
+    .song-card.list,
+    .queue-card,
+    .playlist-track {
+        grid-template-columns: 56px minmax(0, 1fr);
+    }
+
+    .card-actions,
+    .queue-actions,
+    .playlist-actions {
+        grid-column: 1 / -1;
+    }
+
+    .mini-player {
+        display: grid;
+    }
+
+    .lyrics-panel {
+        max-height: 420px;
     }
 }
 
-/* ===== Ultra-Small Phones (Below 360px) ===== */
-@media (max-width: 360px) {
-    .music-container {
-        max-width: 95%;
-        padding: 30px;
+@media (max-width: 520px) {
+    .status-grid {
+        grid-template-columns: 1fr;
     }
-    #songImage {
-        width: 140px;
-        height: 140px;
+
+    .collection-grid.grid,
+    .album-shelf,
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
-    #songTitle {
-        font-size: 1.2rem;
-    }
-    button img {
-        width: 28px;
-        height: 28px;
-    }
-    .progress-bar {
-        height: 6px;
+
+    .mini-player {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
     }
 }
